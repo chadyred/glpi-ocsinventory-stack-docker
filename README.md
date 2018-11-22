@@ -2,17 +2,24 @@
 
 ## TL;DR
 
-#### Install
+#### Install with make
 
-First script will start app in order to install it then download plugin OCS for GLPIa
+Make is install so only do a : 
 
-`chmod 777 ./setup.sh && ./setup.sh`
+`make start`
 
-#### Start
+TIPS:
+ - Only do a `make` to see allowed task and you see :
 
-With 
+```
+hard-restart   Restart project AND REMOVE ALL VOLUME (except glpi app installation)
+hard-stop      Stop project AND REMOVE ALL VOLUME (except glpi app installation)
+restart        Restart project
+start          Start project
+stop           Stop project
+```
 
-`docker-compose up`
+#### Details about installation
 
 It will start up all the environment:
 
@@ -38,6 +45,8 @@ pass - admin
 ##### URI 
 
 On OCS inventory URL are `/ocsreports`, `/download` and `/snmp`, and for all client agent, configuration have to send infor;ation to URI `/ocsinventory` for send informations.
+
+#### About OCS Inventoy and many infomation
 
 -----
 
