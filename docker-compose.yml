@@ -17,15 +17,15 @@ services:
       - 8080:80
 
   php:
-    depends_on: 
+    depends_on:
       - glpi
     image: php:7.0-fpm
     container_name: glpi-server
     volumes:
-      - ./glpi:/var/www/html  
+      - ./glpi:/var/www/html
 
   nginx:
-    depends_on: 
+    depends_on:
       - glpi
     image: nginx:latest
     container_name: nginx
@@ -65,11 +65,11 @@ services:
     ports:
       - "80:80"
     volumes:
-      - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
       - ./glpi:/var/www/html/glpi
     environment:
       - TIMEZONE=Europe/Paris
+      - TZ=Europe/Paris
     restart: always
 
 volumes:
