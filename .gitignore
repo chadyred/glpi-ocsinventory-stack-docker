@@ -3,3 +3,5 @@ www/config/config.php
 www/CHANGELOG.md
 glpi
 ocsinventoryng
+.install
+.install-plugins

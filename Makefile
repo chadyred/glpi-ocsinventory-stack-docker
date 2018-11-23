@@ -1,14 +1,35 @@
 .DEFAULT_GOAL := help
 DOCKER_COMPOSE := $(shell which docker-compose)
 MKDIR := $(shell which mkdir)
+SUB_MAKE := $(shell which make)
 
 glpi:
 	$(MKDIR) glpi
 
-.PHONY: start
-start: glpi ## Start project
+reinstall: hard-stop ## Stop and remove all and reinstall all
+	rm -f .install
+	rm -f .install-plugins
+	sudo rm -rf glpi
+	$(SUB_MAKE) install
+
+PHONY: install
+install: .install ## Install project
+	$(SUB_MAKE) .install-plugins
+
+.install: glpi
 	$(DOCKER_COMPOSE) up --build -d
-	chmod +X ./setup.sh && ./setup.sh
+	chmod +x ./setup.sh
+	./setup.sh
+	> .install
+
+.install-plugins: .install
+	chmod +x ./plugins.sh
+	./plugins.sh
+	> .install-plugins
+
+.PHONY: start
+start: install ## Start project
+	$(DOCKER_COMPOSE) up --build -d
 
 .PHONY: stop
 stop: ## Stop project
