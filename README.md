@@ -6,7 +6,11 @@
 
 Make is install so only do a : 
 
-`make start`
+`make install && make start`
+
+Whole reinstall ( ** /!\ ALL WILL BE REMOVES /!\\** ): 
+
+`make reinstall`
 
 TIPS:
  - Only do a `make` to see allowed task and you see :
@@ -14,6 +18,8 @@ TIPS:
 ```
 hard-restart   Restart project AND REMOVE ALL VOLUME (except glpi app installation)
 hard-stop      Stop project AND REMOVE ALL VOLUME (except glpi app installation)
+install        Install project
+reinstall      Stop and remove all and reinstall all
 restart        Restart project
 start          Start project
 stop           Stop project
@@ -45,6 +51,8 @@ pass - admin
 ##### URI 
 
 On OCS inventory URL are `/ocsreports`, `/download` and `/snmp`, and for all client agent, configuration have to send infor;ation to URI `/ocsinventory` for send informations.
+
+>> 400 error (Bad Request) on the uri `/ocsinventory` and 400 forbidden on `/download` on browser **is normal** : this url is for agent install on all your devices which are clients and send information about their devices.
 
 #### About OCS Inventoy and many infomation
 
