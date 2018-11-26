@@ -68,8 +68,8 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ./glpi:/var/www/html/glpi
     environment:
-      - TIMEZONE=Europe/Paris
-      - TZ=Europe/Paris
+      - TIMEZONE=${TIMEZONE}
+      - TZ=${TZ}
     restart: always
 
 volumes:
