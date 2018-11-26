@@ -5,3 +5,4 @@ glpi
 ocsinventoryng
 .install
 .install-plugins
+.env

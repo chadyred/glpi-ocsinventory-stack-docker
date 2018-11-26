@@ -6,17 +6,18 @@ SUB_MAKE := $(shell which make)
 glpi:
 	$(MKDIR) glpi
 
-reinstall: hard-stop ## Stop and remove all and reinstall all
-	rm -f .install
-	rm -f .install-plugins
-	sudo rm -rf glpi
+clean/%:
+	rm -f ./$*
+
+reinstall: hard-stop clean/.install clean/.install-plugins clean/.env ## Stop and remove all and reinstall all
+	sudo rm -rf ./glpi
 	$(SUB_MAKE) install
 
 PHONY: install
 install: .install ## Install project
 	$(SUB_MAKE) .install-plugins
 
-.install: glpi
+.install: glpi .env
 	$(DOCKER_COMPOSE) up --build -d
 	chmod +x ./setup.sh
 	./setup.sh
@@ -45,9 +46,14 @@ hard-restart: hard-stop start ## Restart project AND REMOVE ALL VOLUME (except g
 hard-stop: ## Stop project AND REMOVE ALL VOLUME (except glpi app installation)
 	$(DOCKER_COMPOSE) down --remove-orphans -v
 
+.env: ## Configure environment variable available for docker-compose
+	echo "TZ=$(TZ)" > .env
+	echo "TIMEZONE=$(TIMEZONE)" >> .env
 
 .PHONY: help
 help:
 	@echo ""
 	@echo "$$(cat $(MAKEFILE_LIST) | egrep -h '^[^:]+:[^#]+## .+$$' | sed -e 's/:[^#]*##/:/' -e 's/\(.*\):/\\033[92m\1\\033[0m:/' | sort -d | column -c2 -t -s :)"
 	@echo ""
+
+include environment/env.mk

@@ -2,6 +2,10 @@
 
 ## TL;DR
 
+#### Environment
+
+On `environment/env.mk` set your TZ and TIMEZONE value.
+
 #### Install with make
 
 Make is install so only do a : 
@@ -16,6 +20,7 @@ TIPS:
  - Only do a `make` to see allowed task and you see :
 
 ```
+.env           Configure environment variable available for docker-compose
 hard-restart   Restart project AND REMOVE ALL VOLUME (except glpi app installation)
 hard-stop      Stop project AND REMOVE ALL VOLUME (except glpi app installation)
 install        Install project
@@ -23,6 +28,7 @@ reinstall      Stop and remove all and reinstall all
 restart        Restart project
 start          Start project
 stop           Stop project
+
 ```
 
 #### Details about installation
