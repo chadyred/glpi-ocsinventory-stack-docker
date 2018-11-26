@@ -1,7 +1,7 @@
 version: '3'
 services:
   ocsinventory:
-    image: ocsinventory/ocsinventory-docker-image:latest
+    build: docker/ocsinventory
     container_name: ocsinventory-server
     environment:
       OCS_DBNAME: ocs
