@@ -6,3 +6,4 @@ ocsinventoryng
 .install
 .install-plugins
 .env
+node_modules
