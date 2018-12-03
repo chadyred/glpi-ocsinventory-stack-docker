@@ -1,0 +1,25 @@
+{
+  "name": "glpi-ocsinventory-stack-docker",
+  "version": "0.1.5",
+  "description": "## TL;DR",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release:major": "changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
+    "release:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
+    "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chadyred/glpi-ocsinventory-stack-docker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chadyred/glpi-ocsinventory-stack-docker/issues"
+  },
+  "homepage": "https://github.com/chadyred/glpi-ocsinventory-stack-docker#readme",
+  "devDependencies": {
+    "generate-changelog": "^1.7.1"
+  }
+}
