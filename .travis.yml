@@ -1,10 +1,17 @@
 language: node_js
 node_js:
-  - "iojs"
   - "7"
-before_script:
+before_deploy:
+  # Set up git user name and tag this commit
+  - git config --local user.name "CELLIER Florian"
+  - git config --local user.email "chadyred@gmail.com"
   - npm install
-script: npm run release:patch	
+  - npm run release:patch:ci
 branches:
   only:
     - master
+deploy:
+  provider: releases
+  # api_key: "GITHUB OAUTH TOKEN"
+  file: "CHANGELOG.md"
+  skip_cleanup: true
