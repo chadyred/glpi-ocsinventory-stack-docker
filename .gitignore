@@ -7,3 +7,4 @@ ocsinventoryng
 .install-plugins
 .env
 node_modules
+npm-debug.log
