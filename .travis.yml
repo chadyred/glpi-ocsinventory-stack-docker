@@ -22,5 +22,4 @@ deploy:
   file_glob: true
   overwrite: true
   on:
-      tags: true
       branch: "master"
