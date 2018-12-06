@@ -1,20 +1,28 @@
 # GLPI with OCS inventory
 
+[![Build Status](https://travis-ci.com/chadyred/glpi-ocsinventory-stack-docker.svg?branch=changelog)](https://travis-ci.com/chadyred/glpi-ocsinventory-stack-docker)
+
 ## TL;DR
 
-#### Environment
-
-On `environment/env.mk` set your TZ and TIMEZONE value.
-
-#### Install with make
+#### First: install with make
 
 Make is install so only do a : 
 
-`make install && make start`
+`make install`
 
-Whole reinstall ( ** /!\ ALL WILL BE REMOVES /!\\** ): 
+#### Second: environment
+
+On `environment/env.mk` set your `TZ` and `TIMEZONE` value.
+
+#### Reinstallation
+
+Whole reinstall ( **/!\ ALL WILL BE REMOVES /!\\** ) and you have to do reset your env value (Second step):
 
 `make reinstall`
+
+#### Help
+
+`make help`
 
 TIPS:
  - Only do a `make` to see allowed task and you see :
