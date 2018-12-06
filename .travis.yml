@@ -6,7 +6,8 @@ branches:
   only:
     - master
 
-before_deploy:
+script:
+  - git branch
   - git checkout master
   # Set up git user name and tag this commit
   - git config --local user.name "CELLIER Florian"
