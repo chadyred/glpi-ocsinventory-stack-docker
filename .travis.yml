@@ -16,6 +16,5 @@ deploy:
     script: npm run release:patch
     api_key: $GITHUB_TOKEN
     file: ./*
-    skip_cleanup: false # Keep change
     file_glob: true
     overwrite: true
