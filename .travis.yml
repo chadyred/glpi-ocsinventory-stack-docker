@@ -8,6 +8,7 @@ branches:
 
 before_deploy:
   # Set up git user name and tag this commit
+  - git checkout master
   - git config --local user.name "CELLIER Florian"
   - git config --local user.email "chadyred@gmail.com"
   - npm run release:patch:ci
