@@ -14,6 +14,7 @@ script:
   - npm run release:patch:ci
   - export TRAVIS_TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
   - export TRAVIS_BRANCH="changelog"
+  - git fetch --all --tags
   - git branch
   - git checkout master
   - git rebase changelog
