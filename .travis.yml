@@ -11,17 +11,11 @@ before_deploy:
   - git config --local user.name "CELLIER Florian"
   - git config --local user.email "chadyred@gmail.com"
   - npm install
-  - npm run release:patch:ci
-  - export TRAVIS_TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
 deploy:
-  provider: releases
-  api_key: $GITHUB_TOKEN
-  file: ./*
-  skip_cleanup: false # Keep change
-  file_glob: true
-  overwrite: true
-  on:
-    branch: master
-after_success:
-  - git log
-  - git push origin master
+  - provider: script
+    script: npm run release:patch
+    api_key: $GITHUB_TOKEN
+    file: ./*
+    skip_cleanup: false # Keep change
+    file_glob: true
+    overwrite: true
