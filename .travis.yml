@@ -12,9 +12,12 @@ before_deploy:
   - git config --local user.email "chadyred@gmail.com"
   - npm run release:patch:ci
 deploy:
-  - provider: script
-    script: npm run release:patch
+  - provider: releases
+    skip_cleanup: false
     api_key: $GITHUB_TOKEN
     file: ./*
     file_glob: true
     overwrite: true
+    on:
+      tags: true
+      all_branches: true
