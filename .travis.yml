@@ -13,7 +13,7 @@ before_deploy:
   - npm run release:patch:ci
 deploy:
   - provider: releases
-    skip_cleanup: false
+    skip_cleanup: true
     api_key: $GITHUB_TOKEN
     file: ./*
     file_glob: true
