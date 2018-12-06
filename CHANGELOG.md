@@ -1,3 +1,9 @@
+#### 0.1.10 (2018-12-06)
+
+##### New Features
+
+* **changelog:**  Add fixup ([fed191e3](https://github.com/chadyred/glpi-ocsinventory-stack-docker/commit/fed191e3202183da1c0e3bc74a882f71f44e0a41))
+
 #### 0.1.22 (2018-12-06)
 
 #### 0.1.21 (2018-12-06)
