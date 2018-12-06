@@ -15,12 +15,12 @@ before_deploy:
   - export TRAVIS_BRANCH="master"
   - git branch
 deploy:
-  - provider: releases
-    skip_cleanup: true
-    api_key: $GITHUB_TOKEN
-    file: ./*
-    file_glob: true
-    overwrite: true
-    on:
+  provider: releases
+  skip_cleanup: true
+  api_key: $GITHUB_TOKEN
+  file: ./*
+  file_glob: true
+  overwrite: true
+  on:
       tags: true
-      all_branches: true
+      branch: "master"
