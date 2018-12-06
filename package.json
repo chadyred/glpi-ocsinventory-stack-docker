@@ -1,6 +1,6 @@
 {
   "name": "glpi-ocsinventory-stack-docker",
-  "version": "0.1.21",
+  "version": "0.1.22",
   "description": "Glpi docker stack with ocs inventory",
   "main": "index.js",
   "scripts": {
