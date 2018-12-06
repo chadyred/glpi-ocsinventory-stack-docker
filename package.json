@@ -1,6 +1,6 @@
 {
   "name": "glpi-ocsinventory-stack-docker",
-  "version": "0.1.21",
+  "version": "0.1.9",
   "description": "Glpi docker stack with ocs inventory",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "release:major": "./node_modules/.bin/generate-changelog  -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
     "release:minor": "./node_modules/.bin/generate-changelog  -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
     "release:patch": "./node_modules/.bin/generate-changelog  -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags",
-    "release:patch:ci": "./node_modules/.bin/generate-changelog  -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch"
+    "release:patch:ci": "./node_modules/.bin/generate-changelog  -p && git add CHANGELOG.md && npm version patch && git commit --amend --no-edit"
   },
   "repository": {
     "type": "git",
