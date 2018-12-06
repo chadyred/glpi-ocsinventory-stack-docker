@@ -10,7 +10,7 @@ before_deploy:
   # Set up git user name and tag this commit
   - git config --local user.name "CELLIER Florian"
   - git config --local user.email "chadyred@gmail.com"
-  - npm install
+  - npm run release:patch:ci
 deploy:
   - provider: script
     script: npm run release:patch
