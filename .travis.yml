@@ -22,3 +22,6 @@ deploy:
   overwrite: true
   on:
     branch: master
+after_success:
+  - git log
+  - git push origin master
