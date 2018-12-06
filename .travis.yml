@@ -7,17 +7,13 @@ branches:
     - changelog
 
 script:
-  - git checkout changelog
   # Set up git user name and tag this commit
   - git config --local user.name "CELLIER Florian"
   - git config --local user.email "chadyred@gmail.com"
   - npm run release:patch:ci
   - export TRAVIS_TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
   - export TRAVIS_BRANCH="changelog"
-  - git fetch --all --tags
   - git branch
-  - git checkout master
-  - git rebase changelog
 after_success:
   - git push https://chadyred:${GITHUB_TOKEN}@github.com/chadyred/glpi-ocsinventory-stack-docker.git HEAD:master
   - git push https://chadyred:${GITHUB_TOKEN}@github.com/chadyred/glpi-ocsinventory-stack-docker.git --tags
