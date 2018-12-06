@@ -17,7 +17,7 @@ deploy:
   provider: releases
   api_key: $GITHUB_TOKEN
   file: ./*
-  skip_cleanup: true
+  skip_cleanup: false # Keep change
   file_glob: true
   overwrite: true
   on:
