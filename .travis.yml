@@ -1,7 +1,3 @@
-env:
-  global:
-    secure: Jb1d5SfEuwUbioKsaE0EYpJ3n8KzutrGivGdDe9NKHojBrGwce1T+gPvp64nJPGDmJeGvDgv1JRiiWQKx4++7ExCxAQeQmtblGklDuWwwCS80ykhRFxi3Sgjy5zfPS4VTWovjs0UPSIJ2sRp7/NRfjvqPeZnEwrKfp+jc37XZLNfCk9py1EHbgkT5LlGa5+GZJGQ5mWSldab7S6179YI/aVFN1SVSjH5NQIcKD/h59wVbbU+u489E9XOd0349kz+JaOlWnKUExFiAL47BF7lDhZh5kX9hsUDD7GKdXwqADGYE/qE5gf+s7b2j1aFTfZpUxoma9JqXlB/2itqvvsv08NSkbMkPZMD/0A9RBzyywpPAbWkGmLyALbCP889zV9FbAeLQrmP3N0lFLx7z4WVlUaOABEwDcMllB8VE6WIQV9Tb+eipYG8qm5l2PNrZJGla6DA2Ki3jEA+3/iBkk1LVVadfxeCsJPMpARssN8au4+AklFrFlIWm3Q7xO9iQirsgAlNKBU6uTfmwbkCA/WhLpw05JFsX9Pm1Rx6BxssVDhMcMDN7af2PfrISzC0hl/9J4NJxkNTVJJ+HxSKsOId70KWGbwR4Dw0Fw/Dd5RfBYyb+V1pNUCk3Zm5qVZi7oJn1d6jVex55HX0nKV4+nnf2U+3/mtHfOdGjK0o4sf4R4g=
-
 language: node_js
 node_js:
   - "7"
@@ -19,8 +15,7 @@ before_deploy:
   - export TRAVIS_TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
 deploy:
   provider: releases
-  api_key:
-    secure: Jb1d5SfEuwUbioKsaE0EYpJ3n8KzutrGivGdDe9NKHojBrGwce1T+gPvp64nJPGDmJeGvDgv1JRiiWQKx4++7ExCxAQeQmtblGklDuWwwCS80ykhRFxi3Sgjy5zfPS4VTWovjs0UPSIJ2sRp7/NRfjvqPeZnEwrKfp+jc37XZLNfCk9py1EHbgkT5LlGa5+GZJGQ5mWSldab7S6179YI/aVFN1SVSjH5NQIcKD/h59wVbbU+u489E9XOd0349kz+JaOlWnKUExFiAL47BF7lDhZh5kX9hsUDD7GKdXwqADGYE/qE5gf+s7b2j1aFTfZpUxoma9JqXlB/2itqvvsv08NSkbMkPZMD/0A9RBzyywpPAbWkGmLyALbCP889zV9FbAeLQrmP3N0lFLx7z4WVlUaOABEwDcMllB8VE6WIQV9Tb+eipYG8qm5l2PNrZJGla6DA2Ki3jEA+3/iBkk1LVVadfxeCsJPMpARssN8au4+AklFrFlIWm3Q7xO9iQirsgAlNKBU6uTfmwbkCA/WhLpw05JFsX9Pm1Rx6BxssVDhMcMDN7af2PfrISzC0hl/9J4NJxkNTVJJ+HxSKsOId70KWGbwR4Dw0Fw/Dd5RfBYyb+V1pNUCk3Zm5qVZi7oJn1d6jVex55HX0nKV4+nnf2U+3/mtHfOdGjK0o4sf4R4g=
+  api_key: $GITHUB_TOKEN
   file: "CHANGELOG.md"
   skip_cleanup: true
   file_glob: true
