@@ -7,20 +7,14 @@ branches:
     - master
 
 before_deploy:
-  # Set up git user name and tag this commit
   - git checkout master
+  # Set up git user name and tag this commit
   - git config --local user.name "CELLIER Florian"
   - git config --local user.email "chadyred@gmail.com"
   - npm run release:patch:ci
   - export TRAVIS_TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
   - export TRAVIS_BRANCH="master"
   - git branch
-deploy:
-  provider: releases
-  skip_cleanup: true
-  api_key: $GITHUB_TOKEN
-  file: ./*
-  file_glob: true
-  overwrite: true
-  on:
-      branch: "master"
+after_success:
+  - git push https://chadyred:${GITHUB_TOKEN}@github.com/chadyred/glpi-ocsinventory-stack-docker.git HEAD:master
+  - git push https://chadyred:${GITHUB_TOKEN}@github.com/chadyred/glpi-ocsinventory-stack-docker.git --tags
