@@ -11,6 +11,9 @@ before_deploy:
   - git config --local user.name "CELLIER Florian"
   - git config --local user.email "chadyred@gmail.com"
   - npm run release:patch:ci
+  - export TRAVIS_TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
+  - export TRAVIS_BRANCH="master"
+  - git branch
 deploy:
   - provider: releases
     skip_cleanup: true
