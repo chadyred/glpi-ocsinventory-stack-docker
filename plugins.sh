@@ -1,6 +1,5 @@
 #! /usr/bin/env bash
 
-
 echo "-- Installations of whole plugins --"
 
 ## Extract as same user as glpi owner
