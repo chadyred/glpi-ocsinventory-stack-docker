@@ -14,8 +14,9 @@ script:
   - export TRAVIS_TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
   - git branch
   - echo $TRAVIS_BRANCH
+  - echo $TRAVIS_PULL_REQUEST
 after_success:
-  - '[[ $TRAVIS_BRANCH == "changelog" ]]'
-  - echo "Changelog branch"
+  - '[[ $TRAVIS_BRANCH == "changelog" ]] && [[ "$TRAVIS_PULL_REQUEST" == "false" ]]'
+  - echo "Changelog branch, not a PR"
   - git push https://chadyred:${GITHUB_TOKEN}@github.com/chadyred/glpi-ocsinventory-stack-docker.git HEAD:master
   - git push https://chadyred:${GITHUB_TOKEN}@github.com/chadyred/glpi-ocsinventory-stack-docker.git --tags
