@@ -1,14 +1,14 @@
 {
   "name": "glpi-ocsinventory-stack-docker",
-  "version": "0.1.9",
+  "version": "0.1.1O",
   "description": "Glpi docker stack with ocs inventory",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\"",
-    "release:major": "./node_modules/.bin/generate-changelog  -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
-    "release:minor": "./node_modules/.bin/generate-changelog  -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
-    "release:patch": "./node_modules/.bin/generate-changelog  -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags",
-   "release:patch:ci": "./node_modules/.bin/generate-changelog  -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git reset --soft HEAD~2 && git commit --amend -C HEAD"
+    "release:major": "./node_modules/.bin/generate-changelog  -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && git reset --soft HEAD~1 && git commit --amend -C HEAD && npm version patch && git reset --soft HEAD~1 && git commit --amend -C HEAD && git push origin && git push origin --tags",
+    "release:minor": "./node_modules/.bin/generate-changelog  -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && git reset --soft HEAD~1 && git commit --amend -C HEAD && npm version patch && git reset --soft HEAD~1 && git commit --amend -C HEAD && git push origin --tags",
+    "release:patch": "./node_modules/.bin/generate-changelog  -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && git reset --soft HEAD~1 && git commit --amend -C HEAD && npm version patch && git reset --soft HEAD~1 && git commit --amend -C HEAD && git push origin && git push origin --tags",
+    "release:patch:ci": "./node_modules/.bin/generate-changelog  -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && git reset --soft HEAD~1 && git commit --amend -C HEAD && npm version patch && git reset --soft HEAD~1 && git commit --amend -C HEAD"
   },
   "repository": {
     "type": "git",
@@ -24,3 +24,4 @@
     "generate-changelog": "^1.7.1"
   }
 }
+
