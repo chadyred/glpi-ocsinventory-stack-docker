@@ -1,3 +1,24 @@
+#### 0.1.18 (2018-12-07)
+
+##### Continuous Integration
+
+* **travis:**
+  *  remove push ([c60486fe](https://github.com/chadyred/glpi-ocsinventory-stack-docker/commit/c60486fe4b6c3c8e9f5bb40fb30e05af7688eee9))
+  *  keep track changelog ([faa662bf](https://github.com/chadyred/glpi-ocsinventory-stack-docker/commit/faa662bf1cb17d5866e81fa58d017dd680c5fa1b))
+
+##### New Features
+
+* **travis:**  not take derived changelog branch ([307cc2c9](https://github.com/chadyred/glpi-ocsinventory-stack-docker/commit/307cc2c9f3d8785fcd856efc7e3dc5fbce248396))
+* **environment:**  Isolate environment file ([040b2a91](https://github.com/chadyred/glpi-ocsinventory-stack-docker/commit/040b2a91b7fbe1cc2c2663822af65a0d8d0926c1))
+* **changelog:**  Add fixup ([1270355e](https://github.com/chadyred/glpi-ocsinventory-stack-docker/commit/1270355ed27410bc9e80ac5eb502cd95f7c55cdb))
+
+##### Code Style Changes
+
+* **plugin:**
+  *  remove break line ([2e5b4a03](https://github.com/chadyred/glpi-ocsinventory-stack-docker/commit/2e5b4a03648a6d8858423b70c8fbb1c5e04f2548))
+  *  remove break line ([e1ef8d14](https://github.com/chadyred/glpi-ocsinventory-stack-docker/commit/e1ef8d14ab3b975cb79c8bbcb8aea73d9b87e67c))
+  *  remove break line ([14531846](https://github.com/chadyred/glpi-ocsinventory-stack-docker/commit/14531846bc32f2c410db9a6a4e476d032c308785))
+
 #### 0.1.17 (2018-12-07)
 
 ##### Continuous Integration
