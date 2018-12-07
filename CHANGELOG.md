@@ -1,3 +1,15 @@
+#### 0.1.13 (2018-12-07)
+
+##### Continuous Integration
+
+* **travis:**  keep track changelog ([faa662bf](https://github.com/chadyred/glpi-ocsinventory-stack-docker/commit/faa662bf1cb17d5866e81fa58d017dd680c5fa1b))
+
+##### New Features
+
+* **travis:**  not take derived changelog branch ([307cc2c9](https://github.com/chadyred/glpi-ocsinventory-stack-docker/commit/307cc2c9f3d8785fcd856efc7e3dc5fbce248396))
+* **environment:**  Isolate environment file ([040b2a91](https://github.com/chadyred/glpi-ocsinventory-stack-docker/commit/040b2a91b7fbe1cc2c2663822af65a0d8d0926c1))
+* **changelog:**  Add fixup ([1270355e](https://github.com/chadyred/glpi-ocsinventory-stack-docker/commit/1270355ed27410bc9e80ac5eb502cd95f7c55cdb))
+
 #### 0.1.12 (2018-12-07)
 
 ##### New Features
