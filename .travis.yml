@@ -15,8 +15,7 @@ script:
   - git branch
   - echo $TRAVIS_BRANCH
   - echo $TRAVIS_PULL_REQUEST
+  - echo $TRAVIS_PULL_REQUEST_BRANCH
 after_success:
-  - '[[ $TRAVIS_BRANCH == "changelog" ]] && [[ "$TRAVIS_PULL_REQUEST" == "false" ]]'
-  - echo "Changelog branch, not a PR"
-  - git push https://chadyred:${GITHUB_TOKEN}@github.com/chadyred/glpi-ocsinventory-stack-docker.git HEAD:master
-  - git push https://chadyred:${GITHUB_TOKEN}@github.com/chadyred/glpi-ocsinventory-stack-docker.git --tags
+  - if [ $TRAVIS_BRANCH == "changelog" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then git push https://chadyred:${GITHUB_TOKEN}@github.com/chadyred/glpi-ocsinventory-stack-docker.git HEAD:master; fi
+  - if [ $TRAVIS_BRANCH == "changelog" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then git push https://chadyred:${GITHUB_TOKEN}@github.com/chadyred/glpi-ocsinventory-stack-docker.git --tags; fi
