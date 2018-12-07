@@ -1,3 +1,10 @@
+#### 0.1.11 (2018-12-07)
+
+##### New Features
+
+* **environment:**  Isolate environment file ([040b2a91](https://github.com/chadyred/glpi-ocsinventory-stack-docker/commit/040b2a91b7fbe1cc2c2663822af65a0d8d0926c1))
+* **changelog:**  Add fixup ([1270355e](https://github.com/chadyred/glpi-ocsinventory-stack-docker/commit/1270355ed27410bc9e80ac5eb502cd95f7c55cdb))
+
 #### 0.1.10 (2018-12-06)
 
 ##### New Features

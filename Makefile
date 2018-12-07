@@ -9,7 +9,7 @@ glpi:
 clean/%:
 	rm -f ./$*
 
-reinstall: hard-stop clean/.install clean/.install-plugins clean/.env ## Stop and remove all and reinstall all
+reinstall: hard-stop clean/.install clean/.install-plugins clean/.env clean/environment/env.mk ## Stop and remove all and reinstall all
 	sudo rm -rf ./glpi
 	$(SUB_MAKE) install
 
@@ -46,9 +46,15 @@ hard-restart: hard-stop start ## Restart project AND REMOVE ALL VOLUME (except g
 hard-stop: ## Stop project AND REMOVE ALL VOLUME (except glpi app installation)
 	$(DOCKER_COMPOSE) down --remove-orphans -v
 
-.env: ## Configure environment variable available for docker-compose
+.env: environment/env.mk ## Configure environment variable available for docker-compose
 	echo "TZ=$(TZ)" > .env
 	echo "TIMEZONE=$(TIMEZONE)" >> .env
+
+environment/env.mk: | environment/env.mk.dist
+	cp $(word 1,$|) $@
+
+environment/env.mk.dist:
+	$(error "This file should exist")
 
 .PHONY: help
 help:
@@ -56,4 +62,4 @@ help:
 	@echo "$$(cat $(MAKEFILE_LIST) | egrep -h '^[^:]+:[^#]+## .+$$' | sed -e 's/:[^#]*##/:/' -e 's/\(.*\):/\\033[92m\1\\033[0m:/' | sort -d | column -c2 -t -s :)"
 	@echo ""
 
-include environment/env.mk
+-include environment/env.mk
