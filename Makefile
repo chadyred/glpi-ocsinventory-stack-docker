@@ -3,8 +3,6 @@ DOCKER_COMPOSE := $(shell which docker-compose)
 MKDIR := $(shell which mkdir)
 SUB_MAKE := $(shell which make)
 
-glpi:
-	$(MKDIR) glpi
 
 clean/%:
 	rm -f ./$*
@@ -17,7 +15,7 @@ PHONY: install
 install: .install ## Install project
 	$(SUB_MAKE) .install-plugins
 
-.install: glpi .env
+.install: .env
 	$(DOCKER_COMPOSE) up --build -d
 	chmod +x ./setup.sh
 	./setup.sh
