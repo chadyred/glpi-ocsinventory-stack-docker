@@ -14,11 +14,9 @@ Make is install so only do a :
 
 On `environment/env.mk` set your `TZ` and `TIMEZONE` value.
 
-#### Reinstallation
+#### Third: start
 
-Whole reinstall ( **/!\ ALL WILL BE REMOVES /!\\** ) and you have to do reset your env value (Second step):
-
-`make reinstall`
+`make start`
 
 #### Help
 
@@ -38,6 +36,12 @@ start          Start project
 stop           Stop project
 
 ```
+
+#### Reinstallation
+
+Whole reinstall ( **/!\ ALL WILL BE REMOVES /!\\** ) and you have to do reset your env value (Second step):
+
+`make reinstall`
 
 #### Details about installation
 
